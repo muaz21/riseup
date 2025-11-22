@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رايز أب - منصة التعليم الإلكتروني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    
+    <!-- Hide Scrollbars -->
+    <style>
+      /* Hide scrollbar for category scroll */
+      #category-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .overflow-x-auto::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .overflow-x-auto {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <!-- Suppress Browser Extension Errors in Console -->
+    <script>
+      window.addEventListener('error', (event) => {
+        // These errors are almost always caused by browser extensions, not by the application code.
+        // They can be safely ignored.
+        const errorSources = [
+          'contentscript.js', // Common in many extensions
+          'extension',
+          'chrome-extension://',
+          'moz-extension://',
+        ];
+        if (event.filename && errorSources.some(source => event.filename.includes(source))) {
+          event.preventDefault();
+          return true;
+        }
+      });
+
+      window.addEventListener('unhandledrejection', (event) => {
+        // Ignore benign promise rejections from extensions.
+        const reason = event.reason?.message || '';
+        const isExtensionError = reason.includes('A listener indicated an asynchronous response') || reason.includes('message channel closed');
+        
+        if (isExtensionError) {
+          event.preventDefault();
+          return true;
+        }
+      });
+    </script>
+    <script type="module" crossorigin src="/assets/index-K91S5WR3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-sAvjRyyN.css">
+  </head>
+
+    <body>
+      <div id="root"></div>
+    </body>
+  </html>
+  
